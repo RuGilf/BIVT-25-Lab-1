@@ -122,23 +122,17 @@ namespace Lab1
         public bool Task8(int year, int pupils, int salary)
         {
             const int bank = 10000;
-            double avrors = pupils / 7;
-            avrors = Math.Ceiling(avrors);
-
-            double sellery = bank - 5 * pupils;
-
-            if (5 * pupils < bank)
+            if ((year % 4 == 0 & year % 100 != 0) || (year % 400 == 0))
             {
-                if (sellery > 0)
-                {
-                    if (year % 4 == 0)
-                    {
-                        return true;
-                    }
-                }
+                return false;
             }
 
-            return false;
+            double avrors = pupils / 7.0;
+            double avrors_ceiling = Math.Ceiling(avrors);
+
+            double new_bank = avrors_ceiling * salary + pupils * 5;
+
+            return new_bank <= bank;
         }
     }
 }
