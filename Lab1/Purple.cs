@@ -4,22 +4,32 @@ namespace Lab1
     {
         public bool Task1(int a, int b, int c)
         {
-            if (a > 0 & b > 0 & c > 0) {
+            if (a > 0 & b > 0 & c > 0)
+            {
                 return true;
             }
-            if (a < 0 & b < 0 & c < 0) {
+            if (a < 0 & b < 0 & c < 0)
+            {
                 return true;
             }
-            if (a == 0 & b == 0 & c == 0){
+            if (a == 0 & b == 0 & c == 0)
+            {
                 return true;
             }
             return false;
         }
         public bool Task2(int a, int b)
         {
-            if (a != 0 & b != 0)
+            if (a != 0)
             {
-                if (a % b == 0 || b % a == 0)
+                if (b % a == 0)
+                {
+                    return true;
+                }
+            }
+            if (b != 0)
+            {
+                if (a % b == 0)
                 {
                     return true;
                 }
@@ -30,7 +40,7 @@ namespace Lab1
         {
             if (a != 0 & b != 0)
             {
-                if (Math.Pow(a, 1 / 3) == b || Math.Pow(a, 1/2) == b || Math.Pow(b, 1/3) == a || Math.Pow(b, 1/2) == a)
+                if (a * a == b || a * a * a == b || b * b == a || b * b * b == a)
                 {
                     return true;
                 }
@@ -59,7 +69,7 @@ namespace Lab1
         }
         public bool Task6(double squareS, double circleS)
         {
-            if (squareS >= circleS)
+            if (Math.Sqrt(squareS) * Math.Sqrt(2) <= Math.Sqrt(circleS / Math.PI) * 2)
             {
                 return true;
             }
@@ -101,7 +111,8 @@ namespace Lab1
                     {
                         answer = 5;
                     }
-                    else {
+                    else
+                    {
                         answer = 1;
                     }
                 }
@@ -124,10 +135,11 @@ namespace Lab1
                     {
                         return true;
                     }
-                } 
+                }
             }
 
             return false;
         }
     }
 }
+
